@@ -1,0 +1,29 @@
+.contactcontainer {
+  padding: 10px 80px;
+}
+.contactcontainer h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+.contactbutton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+.contactimg {
+  width: 30px;
+  height: 30px;
+}
+.contactbtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px;
+  border: none;
+  background-color: hsla(224, 100%, 58%, 1);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
