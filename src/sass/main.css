@@ -388,6 +388,8 @@ body {
 .arrow {
   display: flex;
   gap: 15px;
+  text-decoration: none;
+  color: black;
 }
 
 .arrowimg {
@@ -529,13 +531,13 @@ body {
 .hostelcontainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* space between boxes */
+  gap: 20px;
   justify-content: space-between;
   padding: 10px 30px;
 }
 
 .hostels {
-  flex: 0 0 calc(50% - 10px); /* take up 50% minus half the gap */
+  flex: 0 0 calc(50% - 10px);
   box-sizing: border-box;
 }
 
@@ -633,8 +635,16 @@ button {
   gap: 15px;
 }
 
-.contactinput input {
+.contactinput input::-moz-placeholder {
   color: hsla(0, 0%, 46%, 0.3);
+}
+
+.contactinput input::placeholder {
+  color: hsla(0, 0%, 46%, 0.3);
+}
+
+.contactinput input:focus {
+  color: black;
 }
 
 @media (max-width: 600px) {
@@ -645,4 +655,17 @@ button {
     width: 100%;
     margin-bottom: 10px;
   }
+}
+.success-message {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0057d8;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
 }/*# sourceMappingURL=main.css.map */

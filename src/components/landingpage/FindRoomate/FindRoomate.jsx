@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import RoomateLady from "../../../assets/roomatelady.svg";
 function FindRoomate() {
+  const navigate = useNavigate();
+
+  const handleRoomateClick = () => {
+    navigate("/FindRoomate");
+  };
   return (
     <div className="roomatecontainer">
       <div className="roomatetext">
@@ -9,7 +15,9 @@ function FindRoomate() {
         <p>
           We'll connect you with great <br /> matches
         </p>
-        <button className="herobutton">FIND A ROOMATE</button>
+        <button className="herobutton" onClick={handleRoomateClick}>
+          FIND A ROOMATE
+        </button>
       </div>
       <div className="headerimg"></div>
       <img src={RoomateLady} className="roomateimage" />

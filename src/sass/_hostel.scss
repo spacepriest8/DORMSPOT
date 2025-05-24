@@ -18,6 +18,8 @@
 .arrow {
   display: flex;
   gap: 15px;
+  text-decoration: none;
+  color: black;
 }
 .arrowimg {
   width: 20px;
@@ -139,12 +141,12 @@
 .hostelcontainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* space between boxes */
+  gap: 20px;
   justify-content: space-between;
   padding: 10px 30px;
 }
 
 .hostels {
-  flex: 0 0 calc(50% - 10px); /* take up 50% minus half the gap */
+  flex: 0 0 calc(50% - 10px);
   box-sizing: border-box;
 }

@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import LadyImage from "../../../assets/eclipselady.svg";
 function Header() {
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    navigate("/listProperty");
+  };
   return (
     <div className="headercontainer">
       <div className="headertext">
@@ -13,7 +19,9 @@ function Header() {
           Verified listings, flexible payment, and the <br /> roommate you've
           been hoping for
         </p>
-        <button className="herobutton">EXPLORE LISTINGS</button>
+        <button className="herobutton" onClick={handleExploreClick}>
+          EXPLORE LISTINGS
+        </button>
       </div>
       <div className="headerimg"></div>
       <img src={LadyImage} className="headerimage" />

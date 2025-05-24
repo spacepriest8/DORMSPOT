@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Hostels from "./pages/Hostels";
 import ListProperty from "./pages/ListProperty";
 import FindRoomate from "./pages/FindRoomate";
+import HostelDetails from "./pages/HostelDetails";
 import "../src/sass/main.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Hostels" element={<Hostels />} />
         <Route path="/ListProperty" element={<ListProperty />} />
         <Route path="/FindRoomate" element={<FindRoomate />} />
+        <Route path="/hostel/:id" element={<HostelDetails />} />
       </Routes>
     </>
   );

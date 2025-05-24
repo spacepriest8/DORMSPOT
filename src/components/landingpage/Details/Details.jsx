@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import One from "../../../assets/one.svg";
 import Two from "../../../assets/two.svg";
 import Three from "../../../assets/three.svg";
 function Details() {
+  const navigate = useNavigate();
+
+  const handleHostelClick = () => {
+    navigate("/Hostels");
+  };
   return (
     <div className="detailscontainer">
       <h1>How it works</h1>
@@ -31,8 +37,8 @@ function Details() {
           </p>
         </div>
       </div>
-      <button className="herobutton detailsbutton">
-        START BROWSING HOTELS
+      <button className="herobutton detailsbutton" onClick={handleHostelClick}>
+        START BROWSING HOSTEL
       </button>
     </div>
   );

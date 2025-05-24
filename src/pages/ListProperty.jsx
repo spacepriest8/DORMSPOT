@@ -1,45 +1,40 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 function ListProperty() {
-  // document
-  //   .getElementById("propertyForm")
-  //   .addEventListener("submit", function (e) {
-  //     e.preventDefault();
+  const [showMessage, setShowMessage] = useState(false);
 
-  //     const messageBox = document.createElement("div");
-  //     messageBox.innerText =
-  //       "Thank you, you have successfully submitted your listing!";
-  //     messageBox.style.position = "fixed";
-  //     messageBox.style.top = "20%";
-  //     messageBox.style.left = "50%";
-  //     messageBox.style.transform = "translateX(-50%)";
-  //     messageBox.style.backgroundColor = "#0057d8";
-  //     messageBox.style.color = "white";
-  //     messageBox.style.padding = "20px 30px";
-  //     messageBox.style.borderRadius = "10px";
-  //     messageBox.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
-  //     messageBox.style.fontSize = "16px";
-  //     messageBox.style.zIndex = "1000";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowMessage(true);
 
-  //     document.body.appendChild(messageBox);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
 
-  //     // Remove the message after 3 seconds
-  //     setTimeout(() => {
-  //       messageBox.remove();
-  //       document.getElementById("propertyForm").reset();
-  //     }, 3000);
-  //   });
+    e.target.reset();
+  };
+
   return (
-    <div class="propertycontainer">
-      <a href="#" class="back-link">
-        ← Back
-      </a>
+    <div className="propertycontainer">
+      <Link to="/" className="back-link">
+        <p> ← Back</p>
+      </Link>
+
       <header>
         <h2>
           List a <span className="propertytext">New </span>Property
         </h2>
       </header>
-      <form id="propertyForm">
-        <div class="form-group">
-          <label for="Proname">Property Name</label>
+
+      {showMessage && (
+        <div className="success-message">
+          Thank you, you have successfully submitted your listing!
+        </div>
+      )}
+
+      <form id="propertyForm" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="Proname">Property Name</label>
           <input
             type="text"
             id="Proname"
@@ -48,8 +43,8 @@ function ListProperty() {
           />
         </div>
 
-        <div class="form-group">
-          <label for="type">Property Type</label>
+        <div className="form-group">
+          <label htmlFor="type">Property Type</label>
           <input
             type="text"
             id="type"
@@ -58,8 +53,8 @@ function ListProperty() {
           />
         </div>
 
-        <div class="form-group">
-          <label for="cation">Location</label>
+        <div className="form-group">
+          <label htmlFor="cation">Location</label>
           <input
             type="text"
             id="cation"
@@ -68,20 +63,20 @@ function ListProperty() {
           />
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="price">Price (#)</label>
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="price">Price (#)</label>
             <input type="text" id="price" placeholder="Enter amount" required />
           </div>
-          <div class="form-group">
-            <label for="month">Payment Duration</label>
+          <div className="form-group">
+            <label htmlFor="month">Payment Duration</label>
             <input type="text" id="month" placeholder="e.g. Monthly" required />
           </div>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <label>Amenities</label>
-          <div class="checkboxes">
+          <div className="checkboxes">
             <div>
               <label>
                 <input type="checkbox" /> Wi-Fi
@@ -102,7 +97,6 @@ function ListProperty() {
               <label>
                 <input type="checkbox" /> Kitchen
               </label>
-
               <label>
                 <input type="checkbox" /> Ensuite
               </label>
@@ -110,12 +104,12 @@ function ListProperty() {
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="file">Upload Photos</label>
+        <div className="form-group">
+          <label htmlFor="file">Upload Photos</label>
           <input type="file" id="file" multiple />
         </div>
 
-        <div class="form-group contactinput">
+        <div className="form-group contactinput">
           <label>Contact Information</label>
           <input type="text" placeholder="Phone Number" required />
           <input
@@ -126,9 +120,9 @@ function ListProperty() {
           <input type="text" placeholder="Email" required />
         </div>
 
-        <div class="form-actions">
+        <div className="form-actions">
           <button type="submit">Submit Listing</button>
-          <button type="reset" class="cancel-btn">
+          <button type="reset" className="cancel-btn">
             Cancel
           </button>
         </div>
@@ -136,4 +130,5 @@ function ListProperty() {
     </div>
   );
 }
+
 export default ListProperty;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Arrow from "../assets/arrw.svg";
 import Filter from "../assets/filter.svg";
 import Hostel1 from "../assets/hostel1.svg";
@@ -12,8 +13,10 @@ function Hostels() {
       <div className="maincontainer">
         <div className="leftcontainer">
           <div className="arrow">
-            <img src={Arrow} className="arrowimg" />
-            <p>Back</p>
+            <Link to="/" className="arrow">
+              <img src={Arrow} className="arrowimg" />
+              <p>Back</p>
+            </Link>
           </div>
           <h4 className="filter">Filters</h4>
           <div>
@@ -70,7 +73,7 @@ function Hostels() {
           </div>
         </div>
 
-        {/* This is the right conatiner */}
+        {/* This is the right container */}
         <div className="rightcontainer">
           <div className="hostelcontainer">
             {hostels.map((hostel, index) => (
@@ -95,7 +98,9 @@ function Hostels() {
                   <p>{hostel.price}</p>
                   <h3>{hostel.rooms}</h3>
                 </div>
-                <button className="herobutton hostelbtn">View Details</button>
+                <Link to={`/hostel/${hostel.id}`} className="details-link">
+                  <button className="herobutton hostelbtn">View Details</button>
+                </Link>
               </div>
             ))}
           </div>
