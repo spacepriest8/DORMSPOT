@@ -5,6 +5,8 @@ import Hostels from "./pages/Hostels";
 import ListProperty from "./pages/ListProperty";
 import FindRoomate from "./pages/FindRoomate";
 import HostelDetails from "./pages/HostelDetails";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import "../src/sass/main.css";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/Hostels" element={<Hostels />} />
         <Route path="/ListProperty" element={<ListProperty />} />
         <Route path="/FindRoomate" element={<FindRoomate />} />

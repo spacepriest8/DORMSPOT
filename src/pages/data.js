@@ -1,5 +1,5 @@
 // src/data/hostels.js
-const hostels = [
+export const hostels = [
   {
     name: "Sunshine Hostel",
     distance: "Downtown, 2 km from Center",

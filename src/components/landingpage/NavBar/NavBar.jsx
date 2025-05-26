@@ -17,8 +17,12 @@ function NavBar() {
         <Link to="/FindRoomate">FIND ROOMATE</Link>
       </div>
       <div className="buttn">
-        <button className="btn1">SIGNUP</button>
-        <button className="btn1 btn2">LOGIN</button>
+        <Link to="/signup">
+          <button className="btn1">SIGNUP</button>
+        </Link>
+        <Link to="/login">
+          <button className="btn1 btn2">LOGIN</button>
+        </Link>
       </div>
     </div>
   );
