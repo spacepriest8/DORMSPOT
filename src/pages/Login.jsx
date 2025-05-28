@@ -18,7 +18,11 @@ const Login = () => {
     setLoading(true);
 
     try {
+<<<<<<< HEAD
       const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/login`, {
+=======
+     const res = await fetch('https://dormspot-backend.onrender.com/api/users/login', {
+>>>>>>> 601fdd6e2d6e7acb27de0cc7ba00af02380d5a64
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
