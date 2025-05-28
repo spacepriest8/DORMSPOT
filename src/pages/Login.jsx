@@ -12,45 +12,41 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+ const handleLogin = async (e) => {
+  e.preventDefault();
+  setError('');
+  setLoading(true);
 
-    try {
-<<<<<<< HEAD
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/login`, {
-=======
-     const res = await fetch('https://dormspot-backend.onrender.com/api/users/login', {
->>>>>>> 601fdd6e2d6e7acb27de0cc7ba00af02380d5a64
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await fetch('https://dormspot-backend.onrender.com/api/users/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.message || 'Login failed');
-      }
-
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify({
-        _id: data._id,
-        email: data.email,
-        role: data.role,
-        firstName: data.firstName,
-        lastName: data.lastName
-      }));
-
-      alert('Login successful!');
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    if (!res.ok) {
+      throw new Error(data.message || 'Login failed');
     }
-  };
+
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify({
+      _id: data._id,
+      email: data.email,
+      role: data.role,
+      firstName: data.firstName,
+      lastName: data.lastName
+    }));
+
+    alert('Login successful!');
+    navigate('/dashboard');
+  } catch (err) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="login-container">
