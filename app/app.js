@@ -9,8 +9,8 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { notFound, errorMiddleware } from "../src/middleware/error.middleware.js";
 import hostelRoutes from "../src/routes/hostel.routes.js";
+import bookingRoutes from "../src/routes/booking.routes.js";
 import connectCloudinary from "../src/config/cloudinary.js";
-// import paymentRoutes from "../src/routes/payment.routes.js";
 
 dotenv.config();
 
@@ -46,7 +46,7 @@ app.get("/health", (_, res) => {
 // API Routes
 app.use("/api/users/", usersRoute);
 app.use("/api/v1", hostelRoutes);
-// app.use("/paystack", paymentRoutes);// still working on this route
+app.use('/api', bookingRoutes);
 
 // Error Handlers
 app.use(globalErrorHandler);

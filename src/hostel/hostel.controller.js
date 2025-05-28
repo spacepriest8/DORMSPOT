@@ -43,7 +43,7 @@ export const createHostel = asyncWrapper(async (req, res) => {
 
   // Handle photo uploads and upload to Cloudinary
   if (req.files && req.files.length > 0) {
-    data.photos = req.files.map(file => file.filename);
+    data.photos = req.files.map(file => file.path);
   } else {
     return res.status(400).json({
       success: false,

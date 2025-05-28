@@ -16,7 +16,7 @@ export const validate = (schema, payload) => {
 
   if (error) {
     // Map validation errors to an array of messages
-    const errors = error.details.map((detail) => detail.message);
+    const errors = error.details.map((detail) => detail.message[0].message);
     return { isValid: false, errors };
   }
 
