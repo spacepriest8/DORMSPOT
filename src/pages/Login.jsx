@@ -1,28 +1,6 @@
-// function Login() {
-//   return (
-//     <div>
-//       <h1>Login Page</h1>
-//       {/* Your login form here */}
-//     </div>
-//   );
-// }
-
-// export default Login;
-// function Login() {
-//   return (
-//     <div>
-//       <h1>Login Page</h1>
-//       {/* Your login form here */}
-//     </div>
-//   );
-// }
-
-// export default Login;
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/_login.css';
-
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,7 +18,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -52,12 +30,17 @@ const Login = () => {
         throw new Error(data.message || 'Login failed');
       }
 
-      // Store token in localStorage (or cookie)
       localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('user', JSON.stringify({
+        _id: data._id,
+        email: data.email,
+        role: data.role,
+        firstName: data.firstName,
+        lastName: data.lastName
+      }));
 
       alert('Login successful!');
-      navigate('/dashboard'); // change this to your post-login route
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     } finally {
@@ -75,6 +58,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -82,22 +66,26 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
+              value={formData.password}
               onChange={handleChange}
               required
             />
+
             <div className="forget-link">
               <Link to="/forgot-password">Forgot password?</Link>
             </div>
+
             {error && <p className="error">{error}</p>}
+
             <button type="submit" disabled={loading}>
               {loading ? 'Logging in...' : 'Login'}
             </button>
 
             <div className="or-divider">or continue with</div>
             <div className="social-login">
-              <button className="fb">Facebook</button>
-              <button className="google">Google</button>
-              <button className="insta">Instagram</button>
+              <button type="button" className="fb">Facebook</button>
+              <button type="button" className="google">Google</button>
+              <button type="button" className="insta">Instagram</button>
             </div>
 
             <div className="signup-prompt">
@@ -106,11 +94,11 @@ const Login = () => {
           </form>
         </div>
       </div>
+
       <div className="login-right">
         <img src="/images/pexels.jpg" alt="Login visual" />
       </div>
     </div>
-    
   );
 };
 

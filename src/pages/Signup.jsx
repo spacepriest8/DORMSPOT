@@ -1,33 +1,16 @@
-// function Signup() {
-//   return (
-//     <div>
-//       <h1>Signup Page</h1>
-//       {/* Your signup form here */}
-//     </div>
-//   );
-// }
-
-// export default Signup;
-// function Signup() {
-//   return (
-//     <div>
-//       <h1>Signup Page</h1>
-//       {/* Your signup form here */}
-//     </div>
-//   );
-// }
-
-// export default Signup;
-
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/_signup.css';
-import '../assets/Instagramimg.svg'
 
 const Signup = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    role: ''
+  });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +24,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/signup', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -68,9 +51,16 @@ const Signup = () => {
         <div className="signup-content">
           <h2>Create Account</h2>
           <form onSubmit={handleSignup}>
-            <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
+            <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
+            <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required />
             <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
             <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+
+            <select name="role" onChange={handleChange} required>
+              <option value="">Select Role</option>
+              <option value="student">Student</option>
+              <option value="landlord">Landlord</option>
+            </select>
 
             <div className="terms">
               <input type="checkbox" id="terms" required />
