@@ -20,6 +20,14 @@ function App() {
         <Route path="/ListProperty" element={<ListProperty />} />
         <Route path="/FindRoomate" element={<FindRoomate />} />
         <Route path="/hostel/:id" element={<HostelDetails />} />
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/payment" element={<PaymentSuccess bookingDetails={{
+        hostelName: 'DormSpot Hostel',
+        location: 'New York',
+        duration: '30 days',
+        checkInDate: 'June 1, 2025',
+        amountPaid: '$450'
+      }} />} />
       </Routes>
     </>
   );

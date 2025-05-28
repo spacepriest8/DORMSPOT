@@ -1,0 +1,91 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.login-left, .login-right {
+  flex: 1;
+}
+
+.login-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-content {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.login-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.login-content form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.login-content button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.forgot-link {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  color: #888;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+
+  
+}
+
+.social-login button {
+  flex: 1;
+  padding: 0.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.fb {
+  background-color: #3b5998;
+  color: white;
+}
+
+.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.insta {
+  background-color: #e1306c;
+  color: white;
+}
+
+.signup-prompt {
+  text-align: center;
+}

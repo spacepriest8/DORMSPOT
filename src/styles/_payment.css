@@ -1,0 +1,78 @@
+.payment-success-container {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.booking-summary {
+  text-align: left;
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.booking-summary h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.booking-summary p {
+  margin: 0.3rem 0;
+  color: #444;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid #1976d2;
+  transition: background 0.3s;
+}
+
+.btn.outline {
+  background-color: white;
+  color: #1976d2;
+}
+
+.btn.outline:hover {
+  background-color: #e3f2fd;
+}
+
+.btn.filled {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+}
+
+.btn.filled:hover {
+  background-color: #145ca4;
+}

@@ -1,0 +1,153 @@
+.signup-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.signup-left,
+.signup-right {
+  flex: 1;
+}
+
+/* Left side (form section) */
+.signup-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: #ffffff;
+}
+
+.signup-content {
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-content h2 {
+  color: #0057d8;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.signup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-content input[type="text"],
+.signup-content input[type="email"],
+.signup-content input[type="password"] {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  font-size: 16px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin: -10px 0 10px;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #0057d8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.or-divider {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.social-signup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.social-signup button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.social-signup .fb {
+  background-color: #3b5998;
+}
+
+.social-signup .google {
+  background-color: #db4437;
+}
+
+.social-signup .insta {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.login-prompt {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.login-prompt a {
+  color: #f9c400;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Right side (image section) */
+.signup-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+}
+
+.signup-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column-reverse;
+  }
+
+  .signup-right {
+    height: 200px;
+  }
+
+  .signup-left {
+    padding: 30px 20px;
+  }
+}
