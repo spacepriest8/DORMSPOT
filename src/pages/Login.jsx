@@ -96,7 +96,7 @@ const Login = () => {
       </div>
 
       <div className="login-right">
-        <img src="/images/pexels.jpg" alt="Login visual" />
+        <img src="/image/girl.jpg" alt="Login visual" />
       </div>
     </div>
   );

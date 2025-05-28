@@ -89,7 +89,7 @@ const Signup = () => {
       </div>
 
       <div className="signup-right">
-        <img src="/images/pexels.jpg" alt="DormSpot illustration" />
+        <img src="image/girl.jpg" alt="DormSpot illustration" />
       </div>
     </div>
   );

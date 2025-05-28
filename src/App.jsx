@@ -7,6 +7,8 @@ import FindRoomate from "./pages/FindRoomate";
 import HostelDetails from "./pages/HostelDetails";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import ContactForm from "./pages/ContactForm";
+// import PaymentSuccess from "./pages/PaymentSuccess";
 import "../src/sass/main.css";
 
 function App() {
@@ -21,13 +23,13 @@ function App() {
         <Route path="/FindRoomate" element={<FindRoomate />} />
         <Route path="/hostel/:id" element={<HostelDetails />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/payment" element={<PaymentSuccess bookingDetails={{
+        {/* <Route path="/payment" element={<PaymentSuccess bookingDetails={{
         hostelName: 'DormSpot Hostel',
         location: 'New York',
         duration: '30 days',
         checkInDate: 'June 1, 2025',
         amountPaid: '$450'
-      }} />} />
+      }} />} /> */}
       </Routes>
     </>
   );
