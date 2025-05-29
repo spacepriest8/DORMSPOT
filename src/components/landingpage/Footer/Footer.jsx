@@ -1,4 +1,4 @@
-import Footerlogo from "../../../assets/Footerlogo.svg";
+import Footerlogo from "../../../assets/footerlogo.svg";
 import Facebookimage from "../../../assets/facebookimage.svg";
 import Twitterimage from "../../../assets/whatsappimage.svg";
 import Instagramimage from "../../../assets/instagramimg.svg";
