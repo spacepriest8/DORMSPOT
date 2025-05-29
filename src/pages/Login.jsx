@@ -40,7 +40,7 @@ const Login = () => {
     }));
 
     alert('Login successful!');
-    navigate('/dashboard');
+    navigate('/Hostels');
   } catch (err) {
     setError(err.message);
   } finally {
