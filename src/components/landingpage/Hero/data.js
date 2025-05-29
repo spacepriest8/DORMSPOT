@@ -2,7 +2,7 @@ import verified from "../../../assets/verified.svg";
 import support from "../../../assets/support.svg";
 import Roomate from "../../../assets/roomates.svg";
 import Tour from "../../../assets/tour.svg";
-import Payment from "../../../assets/Payment.svg";
+import Payment from "../../../assets/payment.svg";
 import Review from "../../../assets/review.svg";
 
 const services = [
