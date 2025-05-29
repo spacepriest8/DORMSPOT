@@ -4,7 +4,7 @@ import Hero from "../components/landingpage/Hero/Hero";
 import Details from "../components/landingpage/Details/Details";
 import FindRoomate from "../components/landingpage/FindRoomate/FindRoomate";
 import Testimonial from "../components/landingpage/Testimonials/Testimonial";
-import Contact from "../components/landingpage/Contact/contact";
+import Contact from "../components/landingpage/Contact/Contact";
 import Footer from "../components/landingpage/Footer/Footer";
 
 function Home() {
