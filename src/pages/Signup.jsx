@@ -82,7 +82,7 @@ const Signup = () => {
             </div>
 
             <div className="login-prompt">
-              Already have an account? <Link to="/">Login</Link>
+              Already have an account? <Link to="/Login">Login</Link>
             </div>
           </form>
         </div>
