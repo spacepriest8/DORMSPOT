@@ -1,16 +1,14 @@
-import {v2 as cloudinary} from 'cloudinary';
-import configService from  "./configService.js"; // Assuming you have a config service to manage environment variables
+import { v2 as cloudinary } from 'cloudinary';
+import configService from './configService.js';
 
-const connectCloudinary = () => {
-    cloudinary.config({
-        cloud_name: configService.getOrThrow("CLOUDINARY_NAME"),
-        api_key: configService.getOrThrow("CLOUDINARY_API_KEY"),
-        api_secret: configService.getOrThrow("CLOUDINARY_API_SECRET"),
-        secure: configService.getOrThrow("NODE_ENV") === "production" ? true : false // Use secure URLs for HTTPS in production
-    });
-}
+export const connectCloudinary = () => {
+  cloudinary.config({
+    cloud_name: configService.getOrThrow("CLOUDINARY_NAME"),
+    api_key: configService.getOrThrow("CLOUDINARY_API_KEY"),
+    api_secret: configService.getOrThrow("CLOUDINARY_API_SECRET"),
+    secure: configService.getOrThrow("NODE_ENV") === "production"
+  });
+  console.log('✅ Cloudinary configured!');
+};
 
-
-    console.log('Cloudinary connected successfully'); 
-
-    export default connectCloudinary;
+export default cloudinary; // ✅ Export the actual `v2` instance too!

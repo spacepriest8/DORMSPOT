@@ -8,13 +8,15 @@ import compression from "compression";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { notFound, errorMiddleware } from "../src/middleware/error.middleware.js";
-import hostelRoutes from "../src/routes/hostel.routes.js";
-import bookingRoutes from "../src/routes/booking.routes.js";
-import connectCloudinary from "../src/config/cloudinary.js";
-
+import routes from "../src/routes/index.route.js";
+// import hostelRoutes from "../src/routes/hostel.routes.js";
+// import bookingRoutes from "../src/routes/booking.routes.js";
+// import connectCloudinary from "../src/config/cloudinary.js";
+import { connectCloudinary } from "../src/config/cloudinary.js";
 dotenv.config();
 
 connectDB();
+// connectCloudinary();
 connectCloudinary()
 
 const app = express();
@@ -45,8 +47,8 @@ app.get("/health", (_, res) => {
 
 // API Routes
 app.use("/api/users/", usersRoute);
-app.use("/api/v1", hostelRoutes);
-app.use('/api', bookingRoutes);
+app.use("/api/v1", routes);
+
 
 // Error Handlers
 app.use(globalErrorHandler);

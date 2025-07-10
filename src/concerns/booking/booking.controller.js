@@ -1,7 +1,7 @@
-import asyncWrapper from '../lib/utils.js';
+import asyncWrapper from '../../lib/utils.js';
 import * as BookingService from './booking.service.js';
-import Hostel from '../models/hostel.model.js';
-import {initializePaymentPage, verifyTransaction } from '../config/paystack.js';
+import Hostel from '../../models/hostel.model.js';
+import {initializePaymentPage, verifyTransaction } from '../../config/paystack.js';
 
 export const createBookingController = asyncWrapper(async (req, res) => {
   const { hostelId } = req.body;
