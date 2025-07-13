@@ -22,7 +22,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin:"*"
+  origin:"https://dormspot-dkp2nmri0-priests-projects-f5137719.vercel.app"
   
 }));
 app.use(compression());
