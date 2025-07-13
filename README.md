@@ -12,4 +12,11 @@
   - GET : http://localhost:1961/api/v1/hostels/:id
 
 - update Room
-     PUT : http://localhost:1961/api/v1/hostel
+     PUT : http://localhost:1961/api/v1/room/:id
+
+
+
+
+     http://localhost:1961/api/v1/payments/initiate
+
+686ef26b771078953dd088f2

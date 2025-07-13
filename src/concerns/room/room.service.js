@@ -8,6 +8,12 @@ export async function updateRoom(roomId, update) {
   return Room.findByIdAndUpdate(roomId, update, { new: true });
 }
 
+export async function getRoomById(roomId) {
+  if (!mongoose.Types.ObjectId.isValid(roomId)) return null;
+
+  return Room.findById(roomId);
+}
+
 export async function updateRoomImages(roomId, imageUrls) {
   if (!mongoose.Types.ObjectId.isValid(roomId)) return null;
 

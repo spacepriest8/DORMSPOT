@@ -9,14 +9,11 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { notFound, errorMiddleware } from "../src/middleware/error.middleware.js";
 import routes from "../src/routes/index.route.js";
-// import hostelRoutes from "../src/routes/hostel.routes.js";
-// import bookingRoutes from "../src/routes/booking.routes.js";
-// import connectCloudinary from "../src/config/cloudinary.js";
 import { connectCloudinary } from "../src/config/cloudinary.js";
 dotenv.config();
 
 connectDB();
-// connectCloudinary();
+
 connectCloudinary()
 
 const app = express();
@@ -24,7 +21,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  origin:"*"
+  
+}));
 app.use(compression());
 app.use(helmet());
 
