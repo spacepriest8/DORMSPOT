@@ -46,7 +46,7 @@ app.get("/health", (_, res) => {
 });
 
 // API Routes
-app.use("/api/users/", usersRoute);
+app.use("/api/users", usersRoute);
 app.use("/api/v1", routes);
 
 
