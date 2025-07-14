@@ -7,6 +7,9 @@ import cors from "cors";
 import compression from "compression";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
+import cookieParser from "cookie-parser";
+
+
 import { notFound, errorMiddleware } from "../src/middleware/error.middleware.js";
 import routes from "../src/routes/index.route.js";
 import { connectCloudinary } from "../src/config/cloudinary.js";
@@ -21,7 +24,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(cors({
+ credentials: true,
   origin:"https://dormspot-dkp2nmri0-priests-projects-f5137719.vercel.app"
   
 }));
