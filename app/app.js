@@ -8,6 +8,7 @@ import compression from "compression";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import cookieParser from "cookie-parser";
+// import path from 'path';
 
 
 import { notFound, errorMiddleware } from "../src/middleware/error.middleware.js";
@@ -26,8 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
- credentials: true,
-  origin:"https://dormspot-dkp2nmri0-priests-projects-f5137719.vercel.app"
+  origin:"https://dormspot-dkp2nmri0-priests-projects-f5137719.vercel.app",
+  credentials: true,
   
 }));
 app.use(compression());
@@ -42,8 +43,15 @@ app.use(
   })
 );
 
+// const __dirname = path.resolve();
 // Static folder for uploads
 app.use("/uploads", express.static("uploads"));
+
+
+// This handle client-side routes!
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
 
 // Health check endpoint
 app.get("/health", (_, res) => {
