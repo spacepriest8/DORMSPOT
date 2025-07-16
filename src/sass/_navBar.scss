@@ -1,0 +1,40 @@
+.logo {
+  width: 120px;
+  height: 100px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 80px;
+}
+.nav a {
+  text-decoration: none;
+  gap: 20px;
+  color: black;
+  font-weight: 500;
+}
+.navlist {
+  display: flex;
+  gap: 20px;
+  color: black;
+}
+.homespan {
+  color: hsla(224, 100%, 58%, 1);
+}
+.btn1 {
+  padding: 7px 25px;
+  border-radius: 25px;
+
+  border: 1px solid hsla(224, 100%, 58%, 1);
+  cursor: pointer;
+}
+.btn2 {
+  background-color: hsla(224, 100%, 58%, 1);
+  color: white;
+  border: none;
+}
+.buttn {
+  display: flex;
+  gap: 7px;
+}

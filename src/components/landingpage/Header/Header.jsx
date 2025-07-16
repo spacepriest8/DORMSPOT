@@ -1,0 +1,31 @@
+import { useNavigate } from "react-router-dom";
+import LadyImage from "../../../assets/eclipselady.svg";
+function Header() {
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    navigate("/listProperty");
+  };
+  return (
+    <div className="headercontainer">
+      <div className="headertext">
+        <h1>
+          Find <span className="blue">Hostels</span> you
+          <br />
+          can <span className="yellow">Trust</span> without <br />
+          stress
+        </h1>
+        <p>
+          Verified listings, flexible payment, and the <br /> roommate you've
+          been hoping for
+        </p>
+        <button className="herobutton" onClick={handleExploreClick}>
+          EXPLORE LISTINGS
+        </button>
+      </div>
+      <div className="headerimg"></div>
+      <img src={LadyImage} className="headerimage" />
+    </div>
+  );
+}
+export default Header;

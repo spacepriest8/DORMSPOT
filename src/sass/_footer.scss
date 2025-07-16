@@ -1,0 +1,35 @@
+.footercontainer {
+  padding: 20px 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: hsla(224, 100%, 58%, 1);
+  color: #fff;
+  height: 400px;
+}
+.companydetails {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.connect {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about {
+  margin-top: 30px;
+}
+.about p {
+  margin-top: 15px;
+}
+.about li {
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+  margin-top: 13px;
+}

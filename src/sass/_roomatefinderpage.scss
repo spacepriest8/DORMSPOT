@@ -1,0 +1,123 @@
+.roommate-finder {
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  background: #f7f8fa;
+  color: #333;
+  padding: 20px;
+}
+.back {
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+h2 {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #0066ff;
+}
+
+.highlight {
+  color: #f9c233;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.filters select,
+.filters button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.filters button {
+  background: #0066ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.card h3 {
+  margin: 10px 0 5px;
+}
+.card p {
+  margin: 3px 0;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 0.85rem;
+  margin: 10px 0;
+}
+.tag {
+  background: #eee;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+button.chat {
+  background: #0066ff;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+select {
+  background: #ffd;
+}
+footer {
+  margin-top: 550px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+footer .footer-left h3 {
+  font-size: 1.2rem;
+}
+footer .footer-right > div {
+  margin: 10px;
+}
+.footer-right {
+  margin-top: 200px;
+  gap: 200px;
+  display: flex;
+}
+.social {
+  margin-top: 200px;
+}
+footer a {
+  text-decoration: none;
+  color: #0077cc;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+  .filters,
+  .cards,
+  footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,123 @@
+.propertycontainer {
+  background: #fff;
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+header h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #0057d8;
+}
+.propertytext {
+  color: #f9c400;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  background: #eaeaea;
+  border: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.form-actions {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #0057d8;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cancel-btn {
+  color: #f9c400;
+  background-color: #fff;
+}
+.contactinput {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contactinput input::placeholder {
+  color: hsla(0, 0%, 46%, 0.3);
+}
+
+.contactinput input:focus {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.success-message {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0057d8;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
+}
