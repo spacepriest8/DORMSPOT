@@ -24,7 +24,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('https://dormspot-gafw.onrender.com/api/users/registerUser', {
+      const res = await fetch('https://dormspot-backend.onrender.com/api/users/registerUser', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
