@@ -18,7 +18,7 @@ const Login = () => {
   setLoading(true);
 
   try {
-    const res = await fetch('https://dormspot-gafw.onrender.com/api/users/loginUser', {
+    const res = await fetch('https://dormspot-backend.onrender.com/api/users/loginUser', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
