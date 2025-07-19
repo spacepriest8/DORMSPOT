@@ -1,40 +1,46 @@
 // src/data/hostels.js
-export const hostels = [
+const hostels = [
   {
+     id: 1,
     name: "Sunshine Hostel",
-    distance: "Downtown, 2 km from Center",
-    price: "#350/month",
-    rooms: "4 Rooms Available",
+    distance: "Downtown, 2 km from center",
+    price: "#350k/month",
+    rooms: "4 rooms available",
   },
   {
+     id: 2,
     name: "Greenpark Residence",
-    distance: "WaterSide, 3.5km from Center",
+    distance: "Waterside, 3.5 km from center",
     price: "#300k/month",
-    rooms: "2 Rooms Available",
+    rooms: "2 rooms available",
   },
   {
+     id: 3,
     name: "Student Haven",
-    distance: "University Area, 1.8 km from Center",
+    distance: "University area, 1.8 km from center",
     price: "#60k/month",
-    rooms: "6 Rooms Available",
+    rooms: "6 rooms available",
   },
   {
+     id: 4,
     name: "Urban Living",
-    distance: "City Center, 0.5 km from Center",
+    distance: "City center, 0.5 km from center",
     price: "#130k/month",
-    rooms: "3 Rooms Available",
+    rooms: "3 rooms available",
   },
   {
+     id: 5,
     name: "Comfort Zone",
-    distance: "East Side, 4.2 km from Center",
+    distance: "East side, 4.2 km from center",
     price: "#280k/month",
-    rooms: "8 Room Available",
+    rooms: "8 rooms available",
   },
   {
+     id: 6,
     name: "Campus Corner",
-    distance: "College District, 2.8 km from Center",
+    distance: "College district, 2.8 km from center",
     price: "#180k/month",
-    rooms: "5 Rooms Available",
+    rooms: "5 rooms available",
   },
 ];
 

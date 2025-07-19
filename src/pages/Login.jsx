@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/_login.css';
 
-const Login = () => {
+const Login = ({ setUserRole }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
@@ -12,41 +12,55 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleLogin = async (e) => {
-  e.preventDefault();
-  setError('');
-  setLoading(true);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
 
-  try {
-    const res = await fetch('https://dormspot-gafw.onrender.com/api/users/loginUser', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch('https://dormback-89wf.onrender.com/api/users/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      throw new Error(data.message || 'Login failed');
+      if (!res.ok) {
+        throw new Error(data.message || 'Login failed');
+      }
+
+      // Store authentication data
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('user', JSON.stringify({
+        _id: data._id,
+        email: data.email,
+        role: data.role,
+        firstName: data.firstName,
+        lastName: data.lastName
+      }));
+
+      // Set user role in parent component
+      if (setUserRole) {
+        setUserRole(data.role);
+      }
+
+      // Redirect based on user role
+      if (data.role === 'student') {
+        navigate('/dashboard'); // Will show StudentDashboard
+      } else if (data.role === 'Landlord') {
+        navigate('/ListProperty');
+      } else {
+        navigate('/Hostels'); // Default redirect
+      }
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
-
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('user', JSON.stringify({
-      _id: data._id,
-      email: data.email,
-      role: data.role,
-      firstName: data.firstName,
-      lastName: data.lastName
-    }));
-
-    alert('Login successful!');
-    navigate('/Hostels');
-  } catch (err) {
-    setError(err.message);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <div className="login-container">
@@ -90,6 +104,7 @@ const Login = () => {
 
             <div className="signup-prompt">
               Don't have an account? <Link to="/Signup">Sign Up</Link>
+              Or go Home? <Link to="/">Home</Link>
             </div>
           </form>
         </div>

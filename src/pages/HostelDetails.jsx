@@ -2,7 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import hosteldetails from "./hostelDetails";
 import Arrow from "../assets/arrw.svg";
 import Verified from "../assets/verifiedimg.svg";
-import Map from "../assets/map.svg";
+import Map from "../assets/map.svg"
+import "../styles/_Hostels.module.css";
 import Footer from "../components/landingpage/Footer/Footer";
 
 function HostelDetails() {

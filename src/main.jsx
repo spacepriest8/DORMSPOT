@@ -2,14 +2,17 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./components/AuthContext";
 import App from "./App";
+
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
+  
+     <AuthProvider> 
       <App />
-    </React.StrictMode>
+    </AuthProvider>
   </BrowserRouter>
 );

@@ -24,7 +24,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('https://dormspot-gafw.onrender.com/api/users/registerUser', {
+      const res = await fetch('https://dormback-89wf.onrender.com/api/users/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -83,6 +83,7 @@ const Signup = () => {
 
             <div className="login-prompt">
               Already have an account? <Link to="/Login">Login</Link>
+                Or go Home? <Link to="/">Home</Link>
             </div>
           </form>
         </div>
