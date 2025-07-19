@@ -201,7 +201,9 @@ function Hostels() {
                   </div>
                 </div>
                 
-                <button className="book-now-btn">Book Now</button>
+               <Link to="/login">
+  <button className="book-btn">Book Now</button>
+</Link>
               </div>
             </div>
           </div>
