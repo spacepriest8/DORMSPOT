@@ -53,6 +53,11 @@ app.use("/uploads", express.static("uploads"));
 //   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 // });
 
+
+app.get("/", (req, res) => {
+  res.send("DormSpot backend is live and working!");
+});
+
 // Health check endpoint
 app.get("/health", (_, res) => {
   res.send("server is up");
