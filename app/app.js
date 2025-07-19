@@ -26,10 +26,21 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+const allowedOrigins = [
+  "https://dormspot-latest.vercel.app",
+  "https://dormspot-latest-git-newfront-priests-projects-f5137719.vercel.app",
+  "https://dormspot-latest-9ahi8msqo-priests-projects-f5137719.vercel.app"
+];
+
 app.use(cors({
-  origin:"https://dormspot-latest.vercel.app/",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
-  
 }));
 app.use(compression());
 app.use(helmet());
