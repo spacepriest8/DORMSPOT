@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import roommateData from "./roommateData";
 import Footer from "../components/landingpage/Footer/Footer";
-import "../styles/_findRoommate.css";
+import "../styles/_findroommate.css";
 import Arrow from "../assets/arrw.svg";
 
 function FindRoommate() {
