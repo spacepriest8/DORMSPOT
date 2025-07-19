@@ -52,7 +52,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email });
   if (user && (await bcrypt.compare(password, user.password))) {
     // Check if user account is active
-    if (user.status === 0) {
+    if (user.status === 1) {
       res.status(401);
       throw new Error("Your account has been deactivated");
     }
